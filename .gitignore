@@ -1,0 +1,9 @@
+node_modules
+dist
+.DS_Store
+tsconfig.tsbuildinfo
+.impeccable
+group project/
+preread/
+DESIGN.md
+PRODUCT.md
