@@ -97,22 +97,22 @@ function fmtWhen(date: string, startTime?: string): string {
   return startTime ? `${fmtMonthDay(date)}, ${fmtTime(startTime)}` : fmtMonthDay(date);
 }
 
-const toMinutes = (hhmm: string) => Number(hhmm.slice(0, 2)) * 60 + Number(hhmm.slice(3, 5));
+export const toMinutes = (hhmm: string) => Number(hhmm.slice(0, 2)) * 60 + Number(hhmm.slice(3, 5));
 
-const toClock = (min: number) => `${String(Math.floor(min / 60)).padStart(2, "0")}:${String(min % 60).padStart(2, "0")}`;
-const DAY_END = 23 * 60 + 59;
+export const toClock = (min: number) => `${String(Math.floor(min / 60)).padStart(2, "0")}:${String(min % 60).padStart(2, "0")}`;
+export const DAY_END = 23 * 60 + 59;
 
 /** "1 point", "4 points" */
-const points = (feel: Feel) => `${feel} ${feel === 1 ? "point" : "points"}`;
+export const points = (feel: Feel) => `${feel} ${feel === 1 ? "point" : "points"}`;
 
 /** Right now, in minutes from midnight. */
-function nowMinutes(): number {
+export function nowMinutes(): number {
   const now = new Date();
   return now.getHours() * 60 + now.getMinutes();
 }
 
 /** "Today", "Yesterday", "3 days ago". */
-function daysAgo(iso: string): string {
+export function daysAgo(iso: string): string {
   const n = Math.round((fromISODate(today()).getTime() - fromISODate(iso).getTime()) / 86_400_000);
   return n <= 0 ? "Today" : n === 1 ? "Yesterday" : `${n} days ago`;
 }
@@ -134,7 +134,7 @@ interface Draft {
 }
 
 /** Open the native date picker on click, where the browser lets us (desktop needs the nudge). */
-function openPicker(e: React.MouseEvent<HTMLInputElement>) {
+export function openPicker(e: React.MouseEvent<HTMLInputElement>) {
   try {
     e.currentTarget.showPicker?.();
   } catch {
@@ -142,8 +142,8 @@ function openPicker(e: React.MouseEvent<HTMLInputElement>) {
   }
 }
 
-const digits = (v: string) => v.replace(/\D/g, "");
-const decimal = (v: string) => v.replace(/[^\d.]/g, "").replace(/(\..*)\./g, "$1");
+export const digits = (v: string) => v.replace(/\D/g, "");
+export const decimal = (v: string) => v.replace(/[^\d.]/g, "").replace(/(\..*)\./g, "$1");
 
 /**
  * The detail screen, made editable in place: the same title, stats and set tables,
@@ -481,7 +481,7 @@ function EditWorkout({
 }
 
 /** A number you can type over, sized to its content so it sits in a line of text. */
-function NumInput({
+export function NumInput({
   value,
   unit,
   label,

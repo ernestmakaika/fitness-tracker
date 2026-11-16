@@ -7,21 +7,71 @@
   color: var(--ink-2);
 }
 
-.log-example {
-  transition: opacity 260ms var(--ease), transform 260ms var(--ease);
+/* The log form borrows the edit screen: title, description, grouped rows, set tables.
+   What follows is only what a blank form adds to it. */
+
+/* Type: the same segmented control as the Workouts filter. Picking one opens the rows. */
+.log-kind {
+  align-self: flex-start;
+  max-width: 100%;
+  margin-top: 18px;
 }
 
-.log-example.is-fading {
-  opacity: 0;
-  transform: translateY(-4px);
+.log-kind button {
+  white-space: nowrap;
 }
 
-.log-typed {
-  flex: 1;
+/* The form stays on screen while voice is at work, dimmed because it can't be typed into. */
+.log-fields {
+  display: flex;
+  flex-direction: column;
+  transition: opacity 200ms var(--ease);
 }
 
-.log-typed .log-hint {
-  margin-top: -4px;
+.log-fields.is-busy {
+  opacity: 0.45;
+}
+
+/* Save waits until the form is complete. */
+.edit-save[disabled] {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* What was said sits above the form it filled in. */
+.edit > .vc-said {
+  margin: 0 0 22px;
+}
+
+/* A row that hasn't been answered yet reads as a prompt, not a value. */
+.prop .k.is-empty,
+.prop .prop-time.is-empty {
+  color: var(--ink-2);
+  font-weight: 400;
+}
+
+/* The exercise name is typed straight into the table's caption. */
+.log-ex-name {
+  width: 100%;
+  font: inherit;
+  color: inherit;
+  caret-color: var(--accent);
+}
+
+/* Under each table: add a set, or take one out. */
+.log-row-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 20px;
+  margin-top: 12px;
+}
+
+.log-add-exercise {
+  margin-top: 22px;
+}
+
+.log-status {
+  margin-top: 22px;
 }
 
 /* Saved: a tick in the accent ring, then back to Home. */

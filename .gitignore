@@ -3,6 +3,9 @@ dist
 .DS_Store
 tsconfig.tsbuildinfo
 .impeccable
+.env
+.env.*
+!.env.example
 group project/
 preread/
 DESIGN.md

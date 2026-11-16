@@ -118,7 +118,8 @@ export function parseFeel(s: string): Feel | undefined {
 const TYPE_KEYWORDS: Array<[WorkoutType, RegExp]> = [
   ["run", /\b(run|ran|running|jog|jogged|jogging|tempo|intervals?|track|5k|10k|half marathon|marathon|long run|easy run|trail)\b/],
   ["lift", /\b(lift|lifted|lifting|weights?|gym|push day|pull day|leg day|push|pull|bench|squat|squats|deadlift|deadlifts|upper body|lower body|full body|arms|chest|back day|shoulders|strength)\b/],
-  ["cardio", /\b(bike|biked|biking|cycle|cycling|ride|rode|spin|swim|swam|swimming|row|rowed|rowing|elliptical|stairmaster|stairs|hiit|cardio|jump rope|skipping|hike|hiked|hiking|walk|walked|walking)\b/],
+  ["walk", /\b(walk|walked|walking)\b/],
+  ["cardio", /\b(bike|biked|biking|cycle|cycling|ride|rode|spin|swim|swam|swimming|row|rowed|rowing|elliptical|stairmaster|stairs|hiit|cardio|jump rope|skipping|hike|hiked|hiking)\b/],
   ["mobility", /\b(yoga|stretch|stretched|stretching|mobility|pilates|foam roll|foam rolling|recovery|flow)\b/],
   ["sport", /\b(basketball|pickup|soccer|football|tennis|pickleball|padel|climbing|bouldering|boxing|sparring|volleyball|hockey|golf|badminton|squash|surf|surfing|ski|skiing|skate|skating|martial arts|jiu jitsu|bjj|muay thai|game|match)\b/],
 ];

@@ -3,8 +3,8 @@ import {
   ChartNoAxesColumn,
   Check,
   Clock,
+  CircleGauge,
   Flame,
-  Gauge,
   Layers,
   Repeat,
   Route,
@@ -57,7 +57,7 @@ export const FlameIcon = wrap(Flame);
 export const SetsIcon = wrap(Layers);
 export const RepsIcon = wrap(Repeat);
 export const DistanceIcon = wrap(Route);
-export const PaceIcon = wrap(Gauge);
+export const PaceIcon = wrap(CircleGauge);
 
 /* ---------- workout types ---------- */
 
@@ -67,6 +67,7 @@ export const PaceIcon = wrap(Gauge);
 const TYPE_GLYPHS: Record<NonNullable<Workout["type"]>, string> = {
   run: runUrl,
   lift: liftUrl,
+  walk: walkUrl,
   cardio: sprintUrl,
   mobility: yogaUrl,
   sport: functionalUrl,

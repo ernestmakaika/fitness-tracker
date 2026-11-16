@@ -1,4 +1,4 @@
-export type WorkoutType = "run" | "lift" | "cardio" | "mobility" | "sport" | "other";
+export type WorkoutType = "run" | "lift" | "walk" | "cardio" | "mobility" | "sport" | "other";
 
 export type Feel = 1 | 2 | 3 | 4 | 5;
 
@@ -44,11 +44,12 @@ export const FEEL_LABELS: Record<Feel, string> = {
 export const TYPE_LABELS: Record<WorkoutType, string> = {
   run: "Run",
   lift: "Lift",
+  walk: "Walk",
   cardio: "Cardio",
   mobility: "Mobility",
   sport: "Sport",
   other: "Other",
 };
 
-export const ALL_TYPES: WorkoutType[] = ["run", "lift", "cardio", "mobility", "sport", "other"];
+export const ALL_TYPES: WorkoutType[] = ["run", "lift", "walk", "cardio", "mobility", "sport", "other"];
 export const ALL_FEELS: Feel[] = [1, 2, 3, 4, 5];

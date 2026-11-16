@@ -35,7 +35,7 @@ export function Workouts({
       </header>
 
       {workouts.length === 0 ? (
-        <EmptyState title="Nothing logged yet" body="Tap the mic and say what you did." />
+        <EmptyState title="Nothing logged yet" body="Tap + to log a workout." />
       ) : (
         <>
           <div className="period-toggle wk-filter" role="group" aria-label="Filter by type">
@@ -48,7 +48,7 @@ export function Workouts({
 
           {groups.length === 0 ? (
             <div className="wk-group" key={filter}>
-              <EmptyState title={`No ${filterDef.noun} workouts yet`} body="Tap the mic and say what you did." />
+              <EmptyState title={`No ${filterDef.noun} workouts yet`} body="Tap + to log a workout." />
             </div>
           ) : (
             groups.map((g) => (

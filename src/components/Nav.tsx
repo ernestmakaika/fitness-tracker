@@ -46,12 +46,8 @@ export function Nav({
         disabled={mode === "disabled"}
         onClick={() => (onLog ? mic.onPress() : onChange("log"))}
       >
-        {mode === "listening" ? <CheckIcon /> : <MicIcon />}
-        {mode !== "listening" && (
-          <span className="nav-log-badge" aria-hidden="true">
-            <PlusIcon />
-          </span>
-        )}
+        {/* A plus everywhere; on the Log form it turns into the mic that fills the form in. */}
+        {tab !== "log" ? <PlusIcon /> : mode === "listening" ? <CheckIcon /> : <MicIcon />}
       </button>
     </nav>
   );

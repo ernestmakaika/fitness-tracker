@@ -1,4 +1,4 @@
-/** A quiet card for when there is nothing to show yet. The mic is always on screen, so no button. */
+/** A quiet card for when there is nothing to show yet. The + is always on screen, so no button. */
 export function EmptyState({ title, body }: { title: string; body: string }) {
   return (
     <div className="panel rise">

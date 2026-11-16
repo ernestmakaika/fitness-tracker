@@ -91,12 +91,12 @@ export function Home({
       {view === "calendar" && <WeekStrip day={day} byDay={byDay} onPick={setPicked} />}
 
       {workouts.length === 0 ? (
-        <EmptyState title="Nothing logged yet" body="Tap the mic and say what you did." />
+        <EmptyState title="Nothing logged yet" body="Tap + to log a workout." />
       ) : dayWorkouts.length === 0 ? (
         <EmptyState
           key={day}
           title={day === t ? "Nothing logged today" : "Nothing logged"}
-          body={day === t ? "Tap the mic and say what you did." : `${fmtShort(day)} was a rest day.`}
+          body={day === t ? "Tap + to log a workout." : `${fmtShort(day)} was a rest day.`}
         />
       ) : dayWorkouts.length === 1 ? (
         <DayCard key={day} workout={dayWorkouts[0]} onOpen={onOpen} />
